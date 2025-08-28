@@ -2,7 +2,7 @@
   "mappings": [
     "/content/aem-edge-ue/:/",
     "/content/aem-edge-ue/configuration:/.helix/config.json",
-    "/content/aem-edge-uee/metadata:/metadata.json"
+    "/content/aem-edge-ue/metadata:/metadata.json"
   ],
   "includes": [
     "/content/aem-edge-ue/"
