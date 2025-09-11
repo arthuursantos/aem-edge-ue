@@ -27,6 +27,18 @@
           "label": "Seletor de Emoji via Text"
         },
         {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "emoji-richtext",
+          "label": "Seletor de Emoji via Rich Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "emoji-text",
+          "label": "Seletor de Emoji via Text"
+        },
+        {
           "component": "emoji",
           "name": "emoji",
           "value": "",
