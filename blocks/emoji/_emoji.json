@@ -1,0 +1,40 @@
+{
+  "definitions": [
+    {
+      "title": "Emoji Selector",
+      "id": "emoji-selector",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Emoji Selector",
+              "filter": "emoji-selector"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "emoji-selector",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "emoji-text",
+          "label": "Seletor de Emoji via Text"
+        },
+        {
+          "component": "emoji",
+          "name": "emoji",
+          "value": "",
+          "label": "Seletor de Emoji",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
