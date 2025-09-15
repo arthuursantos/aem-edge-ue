@@ -252,5 +252,16 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "vaicorinthians",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "É coringão?",
+        "name": "boolean",
+        "valueType": "boolean"
+      }
+    ]
   }
 ]
