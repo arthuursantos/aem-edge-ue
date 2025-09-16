@@ -188,6 +188,13 @@
         "value": "",
         "label": "Seletor de Emoji",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "test-text",
+        "value": "",
+        "label": "Texto normal",
+        "valueType": "string"
       }
     ]
   },
