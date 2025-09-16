@@ -184,7 +184,7 @@
     "fields": [
       {
         "component": "emoji",
-        "name": "emoji",
+        "name": "emoji-selector",
         "value": "",
         "label": "Seletor de Emoji",
         "valueType": "string"
