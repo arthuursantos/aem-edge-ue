@@ -11,13 +11,27 @@ export default class Api {
     }
   };
 
-  static login = async () => {
-    const res = await this.fetch('/auth/login', {
+  static login = async (reqBody) => {
+    const res = await this.fetch('/middleware/user/login', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: reqBody,
     });
     if (!res) return null;
     return res.json();
+  };
+
+  static test = async () => {
+    const token = localStorage.getItem('access-token');
+    const res = await this.fetch('/middleware/user/test', {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${token ? `Bearer ${token}` : ''}`,
+      },
+    });
+    if (!res) return null;
+    return res;
   };
 }

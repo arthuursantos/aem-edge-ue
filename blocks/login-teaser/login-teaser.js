@@ -14,8 +14,8 @@ export default function decorate(block) {
   const formEl = document.createElement('form');
   formEl.classList.add('login-teaser__form');
   const emailInput = document.createElement('input');
-  emailInput.setAttribute('type', 'email');
-  emailInput.setAttribute('placeholder', 'Email');
+  emailInput.setAttribute('type', 'text');
+  emailInput.setAttribute('placeholder', 'Usuário');
   const passwordInput = document.createElement('input');
   passwordInput.setAttribute('type', 'password');
   passwordInput.setAttribute('placeholder', 'Senha');
@@ -27,9 +27,29 @@ export default function decorate(block) {
 
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Api.login()
+    const username = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+    Api.login(JSON.stringify({ username, password }))
       .then((r) => {
-        block.append(r.body);
+        localStorage.setItem('access-token', r.access_token);
+      });
+  });
+
+  const timaoDiv = document.createElement('div');
+  timaoDiv.classList.add('timao__div');
+  const timaoBtn = document.createElement('button');
+  timaoBtn.innerHTML = 'sou coringão!';
+  timaoDiv.append(timaoBtn);
+  block.append(timaoDiv);
+
+  timaoBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    Api.test()
+      .then((r) => {
+        r.text().then((t) => timaoDiv.replaceChildren(timaoBtn, t));
+      })
+      .catch(() => {
+        timaoDiv.replaceChildren(timaoBtn, 'acho que ainda não');
       });
   });
 }
